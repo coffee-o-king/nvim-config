@@ -53,21 +53,21 @@ function M.config()
     },
     pickers = {
       live_grep = {
-        theme = "dropdown",
+        -- theme = "dropdown",
       },
 
       grep_string = {
-        theme = "dropdown",
+        -- theme = "dropdown",
       },
 
       find_files = {
-        theme = "dropdown",
-        previewer = false,
+        -- theme = "dropdown",
+        -- previewer = false,
       },
 
       buffers = {
-        theme = "dropdown",
-        previewer = false,
+        -- theme = "dropdown",
+        -- previewer = false,
         initial_mode = "normal",
         mappings = {
           i = {
