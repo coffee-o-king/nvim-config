@@ -16,6 +16,10 @@ function M.config()
         -- extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
       },
       -- null_ls.builtins.diagnostics.eslint,
+      null_ls.builtins.formatting.black.with {
+        extra_args = { "--line-length=100" },
+      },
+      null_ls.builtins.formatting.isort,
       null_ls.builtins.completion.spell,
       null_ls.builtins.formatting.black,
       null_ls.builtins.formatting.black.with({
