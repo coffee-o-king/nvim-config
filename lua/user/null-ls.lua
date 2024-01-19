@@ -19,7 +19,7 @@ function M.config()
       null_ls.builtins.completion.spell,
       null_ls.builtins.formatting.black,
       null_ls.builtins.formatting.black.with({
-        extra_args = { "--line-length 100" },
+        extra_args = { "--line-length=100" },
       }),
     },
   }
