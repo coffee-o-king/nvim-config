@@ -12,16 +12,29 @@ function M.config()
       formatting.stylua,
       formatting.prettier,
       formatting.prettier.with {
-        extra_filetypes = { "toml" },
+        filetypes = {
+          "javascript",
+          "typescript",
+          "css",
+          "scss",
+          "html",
+          "json",
+          "yaml",
+          "markdown",
+          "graphql",
+          "md",
+          "txt",
+        },
+        extra_filtyeps = { "toml" },
         extra_args = { "--no-bracket-spacing" },
       },
-      -- null_ls.builtins.diagnostics.eslint,
-      null_ls.builtins.formatting.isort,
-      null_ls.builtins.completion.spell,
-      null_ls.builtins.formatting.black,
-      null_ls.builtins.formatting.black.with {
+      formatting.isort,
+      formatting.black,
+      formatting.black.with {
         extra_args = { "--line-length=100" },
       },
+      null_ls.builtins.completion.spell,
+      -- null_ls.builtins.diagnostics.eslint,
     },
   }
 end
