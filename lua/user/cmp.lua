@@ -157,9 +157,10 @@ function M.config()
       end,
     },
     sources = {
-      { name = "copilot" },
+      { name = "copilot", group_index = 2 },
       {
         name = "nvim_lsp",
+        group_index = 2,
         entry_filter = function(entry, ctx)
           local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
           if kind == "Snippet" and ctx.prev_context.filetype == "java" then
@@ -177,16 +178,17 @@ function M.config()
           return true
         end,
       },
-      { name = "luasnip" },
-      { name = "cmp_tabnine" },
-      { name = "nvim_lua" },
-      { name = "buffer" },
-      { name = "path" },
-      { name = "calc" },
-      { name = "emoji" },
-      { name = "treesitter" },
-      { name = "crates" },
-      { name = "tmux" },
+      { name = "luasnip", group_index = 2 },
+      { name = "cmp_tabnine", group_index = 2 },
+      { name = "nvim_lua", group_index = 2 },
+      { name = "buffer", group_index = 2 },
+      { name = "path", group_index = 2 },
+      { name = "cmdline", group_index = 2 },
+      { name = "calc", group_index = 2 },
+      { name = "emoji", group_index = 2 },
+      { name = "treesitter", group_index = 2 },
+      { name = "crates", group_index = 2 },
+      { name = "tmux", group_index = 2 },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
