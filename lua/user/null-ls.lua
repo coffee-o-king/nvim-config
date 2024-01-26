@@ -9,12 +9,23 @@ function M.config()
 
   null_ls.setup {
     sources = {
+      formatting.eslint,
+      formatting.eslint.with {
+        filetypes = {
+          -- "javascript",
+          -- "javascriptreact",
+          -- "typescript",
+          -- "typescriptreact",
+        },
+      },
       formatting.stylua,
       formatting.prettier,
       formatting.prettier.with {
         filetypes = {
           "javascript",
+          "javascriptreact",
           "typescript",
+          "typescriptreact",
           "css",
           "scss",
           "html",
@@ -34,7 +45,7 @@ function M.config()
         extra_args = { "--line-length=100" },
       },
       null_ls.builtins.completion.spell,
-      -- null_ls.builtins.diagnostics.eslint,
+      null_ls.builtins.diagnostics.eslint,
     },
   }
 end
