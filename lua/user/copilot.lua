@@ -1,11 +1,11 @@
 local M = {
- "zbirenbaum/copilot.lua",
+  "zbirenbaum/copilot.lua",
   cmd = "Copilot",
   event = "InsertEnter",
 }
 
 function M.config()
-  require("copilot").setup({})
+  require("copilot").setup {}
 end
 
 return M

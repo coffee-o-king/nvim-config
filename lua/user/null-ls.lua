@@ -18,6 +18,7 @@ function M.config()
           -- "typescriptreact",
         },
       },
+      formatting.gofumpt,
       formatting.stylua,
       formatting.prettier,
       formatting.prettier.with {
