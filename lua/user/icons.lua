@@ -143,6 +143,7 @@ return {
     Trace = "✎",
   },
   misc = {
+    Codeium = "",
     Robot = "󰚩 ",
     Squirrel = "",
     Tag = "",

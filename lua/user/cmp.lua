@@ -49,6 +49,7 @@ local M = {
 }
 
 function M.config()
+  vim.api.nvim_set_hl(0, "CmpItemKindCodeium", { fg = "#6CC644" })
   vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
   vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
   vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
@@ -128,6 +129,10 @@ function M.config()
           path = "",
           emoji = "",
         })[entry.source.name]
+        if entry.source.name == "codeium" then
+          vim_item.kind = icons.misc.Codeium
+          vim_item.kind_hl_group = "CmpItemKindCodeium"
+        end
         if entry.source.name == "copilot" then
           vim_item.kind = icons.git.Octoface
           vim_item.kind_hl_group = "CmpItemKindCopilot"
@@ -157,6 +162,7 @@ function M.config()
       end,
     },
     sources = {
+      { name = "codeium" },
       { name = "copilot", group_index = 2 },
       {
         name = "nvim_lsp",
