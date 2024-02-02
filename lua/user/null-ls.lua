@@ -1,5 +1,5 @@
 local M = {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
 }
 
 function M.config()
@@ -9,13 +9,13 @@ function M.config()
 
   null_ls.setup {
     sources = {
-      formatting.eslint,
+      -- formatting.eslint,
       formatting.eslint.with {
         filetypes = {
-          -- "javascript",
-          -- "javascriptreact",
-          -- "typescript",
-          -- "typescriptreact",
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
         },
       },
       formatting.gofumpt,
