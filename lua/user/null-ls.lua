@@ -20,8 +20,7 @@ function M.config()
       },
       formatting.gofumpt,
       formatting.stylua,
-      formatting.prettier,
-      formatting.prettier.with {
+      formatting.prettierd.with {
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -37,7 +36,7 @@ function M.config()
           "md",
           "txt",
         },
-        extra_filtyeps = { "toml" },
+        extra_filetypes = { "toml" },
         args = { "--no-bracket-spacing" },
       },
       formatting.isort,
