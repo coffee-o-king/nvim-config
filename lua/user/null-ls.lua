@@ -18,6 +18,12 @@ function M.config()
           "typescriptreact",
         },
       },
+      formatting.sqlfmt.with {
+        filetypes = { "sql" },
+        extra_args = {
+          "--line-length=100",
+        },
+      },
       formatting.gofumpt,
       formatting.stylua,
       formatting.prettierd.with {
