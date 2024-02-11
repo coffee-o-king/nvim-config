@@ -8,8 +8,13 @@ function M.config()
   local mappings = {
     ["q"] = { "<cmd>confirm q<CR>", "Quit" },
     ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    ["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+    h = {
+      name = "Harpoon",
+      h = { "<cmd>lua require'harpoon'.ui:toggle_quick_menu(require'harpoon':list())<cr>", "Quick Menu" },
+      a = { "<cmd>lua require'harpoon':list():append()<cr>", "Add" },
+    },
     b = {
       name = "Buffers",
       b = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
