@@ -5,6 +5,7 @@ local M = {
 function M.config()
   require("gitblame").setup {
     enabled = true,
+    date_format = "%Y-%m-%d %I:%M%p",
   }
 end
 
