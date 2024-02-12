@@ -1,6 +1,6 @@
 local M = {
   "ThePrimeagen/harpoon",
-  branch = "master",
+  branch = "harpoon2",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
