@@ -26,7 +26,7 @@ function M.config()
       },
       formatting.gofumpt,
       formatting.stylua,
-      formatting.prettierd.with {
+      formatting.prettier.with {
         filetypes = {
           "javascript",
           "javascriptreact",
