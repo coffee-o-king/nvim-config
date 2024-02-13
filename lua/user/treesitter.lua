@@ -30,14 +30,14 @@ function M.config()
   require("nvim-treesitter.configs").setup {
     ensure_installed = "all",
     ignore_install = { "" },
+    auto_install = true,
     sync_install = false,
+    modules = {},
     highlight = {
       enable = true,
       -- disable = { "markdown" },
       additional_vim_regex_highlighting = false,
     },
-
-    indent = { enable = true },
 
     matchup = {
       enable = { "astro" },
@@ -52,6 +52,8 @@ function M.config()
     },
 
     autopairs = { enable = true },
+
+    indent = true,
 
     textobjects = {
       select = {
@@ -88,11 +90,8 @@ function M.config()
   }
 
   -- local configs = require "nvim-treesitter.configs"
-  --
   -- configs.setup {
   --   -- modules = {
-  --   --
-  --   --
   --   --   rainbow = {
   --   --     enable = false,
   --   --     query = {

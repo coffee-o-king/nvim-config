@@ -9,7 +9,7 @@ function M.config()
 
   null_ls.setup {
     sources = {
-      -- formatting.eslint,
+      formatting.eslint,
       formatting.eslint.with {
         filetypes = {
           "javascript",
@@ -26,7 +26,7 @@ function M.config()
       },
       formatting.gofumpt,
       formatting.stylua,
-      formatting.prettier.with {
+      formatting.prettierd.with {
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -42,10 +42,8 @@ function M.config()
           "md",
           "txt",
         },
-        extra_args = { "--no-bracket-spacing" },
       },
       formatting.isort,
-      formatting.black,
       formatting.black.with {
         extra_args = { "--line-length=100" },
       },
