@@ -42,7 +42,6 @@ function M.config()
           "md",
           "txt",
         },
-        extra_filetypes = { "toml" },
         extra_args = { "--no-bracket-spacing" },
       },
       formatting.isort,
