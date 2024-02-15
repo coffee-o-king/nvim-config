@@ -9,15 +9,6 @@ function M.config()
 
   null_ls.setup {
     sources = {
-      formatting.eslint,
-      formatting.eslint.with {
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-        },
-      },
       formatting.sqlfmt.with {
         filetypes = { "sql" },
         extra_args = {
@@ -26,7 +17,10 @@ function M.config()
       },
       formatting.gofumpt,
       formatting.stylua,
-      formatting.prettierd.with {
+      formatting.prettier.with {
+        condition = function(utils)
+          return utils.root_has_file ".prettierrc" or utils.root_has_file ".prettierrc.js"
+        end,
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -41,6 +35,14 @@ function M.config()
           "graphql",
           "md",
           "txt",
+        },
+      },
+      formatting.eslint.with {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
         },
       },
       formatting.isort,

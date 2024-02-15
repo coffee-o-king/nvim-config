@@ -68,7 +68,7 @@ function M.config()
       buffers = {
         -- theme = "dropdown",
         -- previewer = false,
-        initial_mode = "normal",
+        initial_mode = "insert",
         mappings = {
           i = {
             ["<C-d>"] = actions.delete_buffer,
