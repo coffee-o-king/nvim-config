@@ -21,29 +21,6 @@ function M.config()
         condition = function(utils)
           return utils.root_has_file ".prettierrc" or utils.root_has_file ".prettierrc.js"
         end,
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-          "css",
-          "scss",
-          "html",
-          "json",
-          "yaml",
-          "markdown",
-          "graphql",
-          "md",
-          "txt",
-        },
-      },
-      formatting.eslint.with {
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-        },
       },
       formatting.isort,
       formatting.black.with {
