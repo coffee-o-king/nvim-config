@@ -18,8 +18,9 @@ function M.config()
       formatting.gofumpt,
       formatting.stylua,
       formatting.prettier.with {
+        -- get configuration from project directory
         condition = function(utils)
-          return utils.root_has_file ".prettierrc" or utils.root_has_file ".prettierrc.js"
+          return utils.root_has_file ".prettierrc.js"
         end,
       },
       formatting.isort,
