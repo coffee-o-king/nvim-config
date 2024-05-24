@@ -28,6 +28,7 @@ function M.config()
           return utils.root_has_file ".prettierrc.js"
         end,
       },
+      formatting.rustfmt,
       formatting.isort,
       formatting.black.with {
         extra_args = { "--line-length=100" },
