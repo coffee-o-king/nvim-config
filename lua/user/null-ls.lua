@@ -12,9 +12,14 @@ function M.config()
       formatting.sqlfmt.with {
         filetypes = { "sql" },
         extra_args = {
-          "--line-length=100",
+          -- "--dialect=clickhouse",
+          "--line-length=120",
         },
       },
+      -- formatting.sql_formatter.with {
+      --   filetypes = { "sql" },
+      --   command = { "sleek" },
+      -- },
       formatting.gofumpt,
       formatting.stylua,
       formatting.prettier.with {
