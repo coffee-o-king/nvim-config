@@ -22,6 +22,7 @@ function M.config()
       -- },
       formatting.gofumpt,
       formatting.stylua,
+      -- formatting.prettier,
       formatting.prettier.with {
         -- get configuration from project directory
         condition = function(utils)
