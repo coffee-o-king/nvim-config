@@ -119,6 +119,7 @@ function M.config()
         "Workspace Symbols",
       },
       e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+      z = { "<cmd>ZenMode<cr>", "Zen Mode" },
     },
 
     t = {
