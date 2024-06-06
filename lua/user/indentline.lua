@@ -10,6 +10,7 @@ function M.config()
   require("indent_blankline").setup {
     buftype_exclude = { "terminal", "nofile" },
     filetype_exclude = {
+      "yaml",
       "help",
       "startify",
       "dashboard",

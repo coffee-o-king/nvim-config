@@ -27,6 +27,7 @@ function M.config()
     styles = { transparency = true },
   }
   vim.cmd "colorscheme rose-pine"
+  vim.o.cursorline = false
 
   -- require("tokyonight").setup {
   --   style = "night",
