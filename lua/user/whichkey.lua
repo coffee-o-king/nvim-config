@@ -119,7 +119,6 @@ function M.config()
         "Workspace Symbols",
       },
       e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
-      z = { "<cmd>ZenMode<cr>", "Zen Mode" },
     },
 
     t = {
@@ -141,6 +140,8 @@ function M.config()
       name = "Treesitter",
       i = { ":TSConfigInfo<cr>", "Info" },
     },
+
+    z = { "<cmd>ZenMode<cr>", "Zen Mode" },
   }
 
   local opts = {
@@ -388,7 +389,6 @@ function M.config()
   which_key.register(gpvmappings, gpvopts)
   which_key.register(gpnmappings, gpnopts)
   which_key.register(gpimappings, gpiopts)
-
 end
 
 return M
