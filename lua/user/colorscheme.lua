@@ -43,6 +43,8 @@ function M.config()
   -- vim.cmd.colorscheme "catppuccin"
 
   vim.o.cursorline = false
+  vim.opt.titlestring = "neovim"
+  vim.opt.title = true
 end
 
 return M
