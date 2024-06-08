@@ -52,6 +52,7 @@ function M.config()
     "lua_ls",
     "cssls",
     "gopls",
+    "rust_analyzer",
     "html",
     "tsserver",
     "astro",

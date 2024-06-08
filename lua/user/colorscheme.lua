@@ -25,6 +25,7 @@ function M.config()
   require("rose-pine").setup {
     variant = "moon",
     styles = { transparency = true },
+    -- dim_inactive_windows = true,
   }
   vim.cmd "colorscheme rose-pine"
   vim.o.cursorline = false
@@ -40,6 +41,8 @@ function M.config()
   --   transparent_background = true,
   -- }
   -- vim.cmd.colorscheme "catppuccin"
+
+  vim.o.cursorline = false
 end
 
 return M
