@@ -52,7 +52,7 @@ function M.config()
         teal = "#6d766b",
         sky = "#a0d0c0",
         sapphire = "#8dd1da",
-        blue = "#0091b4",
+        blue = "#7ba2e0",
         text = "#f5dbff",
         subtext1 = "#a6b0d8",
         subtext0 = "#959ec2",
@@ -67,6 +67,7 @@ function M.config()
         crust = "#080808",
       },
     },
+    term_colors = true,
   }
   vim.cmd.colorscheme "catppuccin"
 
