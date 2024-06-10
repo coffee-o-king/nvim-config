@@ -1,9 +1,9 @@
 local M = {
   -- "navarasu/onedark.nvim",
   -- "ray-x/aurora",
-  "rose-pine/neovim",
+  -- "rose-pine/neovim",
   -- "folke/tokyonight.nvim",
-  -- "catppuccin/nvim",
+  "catppuccin/nvim",
   -- "EdenEast/nightfox.nvim",
   lazy = false, -- make sure we load this during startup if it is your main colorscheme
   priority = 1000, -- Ensure it loads first
@@ -22,13 +22,11 @@ function M.config()
   -- vim.cmd "let g:aurora_darker = 1"
   -- vim.cmd "colorscheme aurora"
 
-  require("rose-pine").setup {
-    variant = "moon",
-    styles = { transparency = true },
-    -- dim_inactive_windows = true,
-  }
-  vim.cmd "colorscheme rose-pine"
-  vim.o.cursorline = false
+  -- require("rose-pine").setup {
+  --   variant = "moon",
+  --   styles = { transparency = true },
+  -- }
+  -- vim.cmd "colorscheme rose-pine"
 
   -- require("tokyonight").setup {
   --   style = "night",
@@ -36,11 +34,41 @@ function M.config()
   -- }
   -- vim.cmd "colorscheme tokyonight"
 
-  -- require("catppuccin").setup {
-  --   flavour = "mocha",
-  --   transparent_background = true,
-  -- }
-  -- vim.cmd.colorscheme "catppuccin"
+  require("catppuccin").setup {
+    flavour = "mocha",
+    transparent_background = true,
+    color_overrides = {
+      mocha = {
+        rosewater = "#ffc9c9",
+        flamingo = "#ff9f9a",
+        pink = "#ffa9c9",
+        mauve = "#df95cf",
+        lavender = "#caa6ec",
+        red = "#f23356",
+        maroon = "#fd6592",
+        peach = "#f89595",
+        yellow = "#ffbe69",
+        green = "#afc3ac",
+        teal = "#6d766b",
+        sky = "#a0d0c0",
+        sapphire = "#8dd1da",
+        blue = "#0091b4",
+        text = "#f5dbff",
+        subtext1 = "#a6b0d8",
+        subtext0 = "#959ec2",
+        overlay2 = "#848cad",
+        overlay1 = "#717997",
+        overlay0 = "#63677f",
+        surface2 = "#505469",
+        surface1 = "#3e4255",
+        surface0 = "#2c2f40",
+        base = "#151515",
+        mantle = "#0e0e0e",
+        crust = "#080808",
+      },
+    },
+  }
+  vim.cmd.colorscheme "catppuccin"
 
   vim.o.cursorline = false
   vim.opt.titlestring = "neovim"
