@@ -10,7 +10,7 @@ local M = {
 
 function M.config()
   require("barbecue").setup {
-    theme = "auto",
+    theme = { basename = { fg = "#fafafa", bold = true } },
     show_modified = true,
     -- attach_navic = true,
   }
