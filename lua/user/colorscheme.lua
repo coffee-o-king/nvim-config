@@ -45,7 +45,7 @@ function M.config()
         mauve = "#e68ad2",
         lavender = "#ba8ae6",
         red = "#ba3f1d",
-        maroon = "#fd6592",
+        maroon = "#f26d95",
         peach = "#f89595",
         yellow = "#ffbe69",
         green = "#afc3ac",
