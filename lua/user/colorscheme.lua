@@ -53,7 +53,7 @@ function M.config()
         sky = "#a0d0c0",
         sapphire = "#8dd1da",
         blue = "#7ba2e0",
-        text = "#f5dbff",
+        text = "#ebc0ff",
         subtext1 = "#a6b0d8",
         subtext0 = "#959ec2",
         overlay2 = "#848cad",
