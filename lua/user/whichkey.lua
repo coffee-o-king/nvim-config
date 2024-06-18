@@ -41,6 +41,17 @@ function M.config()
       U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
     },
 
+    D = {
+      name = "Diff View",
+      o = { "<cmd>DiffviewOpen<cr>", "Open" },
+      c = { "<cmd>DiffviewClose<cr>", "Close" },
+      f = { "<cmd>DiffviewToggleFiles<cr>", "Files" },
+      h = { "<cmd>DiffviewFileHistory<cr>", "History" },
+      n = { "<cmd>DiffviewNextHunk<cr>", "Hunk next" },
+      p = { "<cmd>DiffviewPrevHunk<cr>", "Hunk prev" },
+      r = { "<cmd>DiffviewRefresh<cr>", "Refresh" },
+    },
+
     p = {
       name = "Plugins",
       i = { "<cmd>Lazy install<cr>", "Install" },
@@ -146,7 +157,6 @@ function M.config()
       name = "Treesitter",
       i = { ":TSConfigInfo<cr>", "Info" },
     },
-
   }
 
   local opts = {
