@@ -10,15 +10,19 @@ function M.config()
     ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
     ["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+    ["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
+
     h = {
       name = "Harpoon",
       h = { "<cmd>lua require'harpoon'.ui:toggle_quick_menu(require'harpoon':list())<cr>", "Quick Menu" },
       a = { "<cmd>lua require'harpoon':list():append()<cr>", "Add" },
     },
+
     b = {
       name = "Buffers",
       b = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
     },
+
     d = {
       name = "Debug",
       t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
@@ -36,6 +40,7 @@ function M.config()
       q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
       U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
     },
+
     p = {
       name = "Plugins",
       i = { "<cmd>Lazy install<cr>", "Install" },
@@ -134,6 +139,7 @@ function M.config()
       p = { "<cmd>tabp<cr>", "Prev" },
       h = { "<cmd>-tabmove<cr>", "Move Left" },
       l = { "<cmd>+tabmove<cr>", "Move Right" },
+      c = { "<cmd>tabclose<cr>", "Close" },
     },
 
     T = {
@@ -141,7 +147,6 @@ function M.config()
       i = { ":TSConfigInfo<cr>", "Info" },
     },
 
-    z = { "<cmd>ZenMode<cr>", "Zen Mode" },
   }
 
   local opts = {
@@ -324,6 +329,7 @@ function M.config()
       },
     },
   }
+
   local gpnopts = {
     mode = "n", -- NORMAL mode
     prefix = "",

@@ -6,6 +6,7 @@ function M.config()
   local null_ls = require "null-ls"
 
   local formatting = null_ls.builtins.formatting
+  local diagnostics = null_ls.builtins.diagnostics
 
   null_ls.setup {
     sources = {
@@ -23,9 +24,8 @@ function M.config()
       -- },
 
       -- -- golang -- --
-      -- formatting.gofumpt,
       formatting.goimports,
-      null_ls.builtins.diagnostics.gopls,
+      -- diagnostics.gopls, -- installed with golang
 
       -- -- lua -- --
       formatting.stylua,
@@ -39,16 +39,15 @@ function M.config()
         end,
         extra_filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
       },
-      null_ls.builtins.diagnostics.eslint_d,
-
-      -- -- rust -- --
-      formatting.rustfmt,
+      diagnostics.eslint_d,
 
       -- -- python -- --
       formatting.isort,
       formatting.black.with {
         extra_args = { "--line-length=100" },
       },
+
+      -- -- code completion -- --
       null_ls.builtins.completion.spell,
     },
   }
