@@ -9,6 +9,7 @@ function M.config()
 
   null_ls.setup {
     sources = {
+      -- -- sql -- --
       formatting.sqlfmt.with {
         filetypes = { "sql" },
         extra_args = {
@@ -20,8 +21,16 @@ function M.config()
       --   filetypes = { "sql" },
       --   command = { "sleek" },
       -- },
-      formatting.gofumpt,
+
+      -- -- golang -- --
+      -- formatting.gofumpt,
+      formatting.goimports,
+      null_ls.builtins.diagnostics.gopls,
+
+      -- -- lua -- --
       formatting.stylua,
+
+      -- -- javascript -- --
       -- formatting.prettier,
       formatting.prettier.with {
         -- get configuration from project directory
@@ -30,13 +39,17 @@ function M.config()
         end,
         extra_filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
       },
+      null_ls.builtins.diagnostics.eslint_d,
+
+      -- -- rust -- --
       formatting.rustfmt,
+
+      -- -- python -- --
       formatting.isort,
       formatting.black.with {
         extra_args = { "--line-length=100" },
       },
       null_ls.builtins.completion.spell,
-      null_ls.builtins.diagnostics.eslint_d,
     },
   }
 end
