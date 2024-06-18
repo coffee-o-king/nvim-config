@@ -15,9 +15,9 @@ function M.config()
   local icons = require "user.icons"
   require("neogit").setup {
     -- window options
-    kind = "vsplit",
+    kind = "floating",
     popup = { kind = "floating" },
-    commit_editor = { kind = "replace" },
+    commit_editor = { kind = "floating", show_staged_diff = false },
     -- integrations
     integrations = {
       diffview = true,
