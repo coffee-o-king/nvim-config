@@ -17,7 +17,7 @@ function M.config()
     -- window options
     kind = "vsplit",
     popup = { kind = "floating" },
-    commit_editor = {kind = "replace"},
+    commit_editor = { kind = "replace" },
     -- integrations
     integrations = {
       diffview = true,
