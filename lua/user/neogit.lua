@@ -14,11 +14,15 @@ local M = {
 function M.config()
   local icons = require "user.icons"
   require("neogit").setup {
-    kind = "floating",
+    -- window options
+    kind = "vsplit",
     popup = { kind = "floating" },
+    commit_editor = {kind = "replace"},
+    -- integrations
     integrations = {
       diffview = true,
     },
+    -- icon customizations
     signs = {
       section = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
       item = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
