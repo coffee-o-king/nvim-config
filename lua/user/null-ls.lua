@@ -28,6 +28,7 @@ function M.config()
         condition = function(utils)
           return utils.root_has_file ".prettierrc.js"
         end,
+        extra_filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
       },
       formatting.rustfmt,
       formatting.isort,
@@ -35,7 +36,7 @@ function M.config()
         extra_args = { "--line-length=100" },
       },
       null_ls.builtins.completion.spell,
-      null_ls.builtins.diagnostics.eslint,
+      null_ls.builtins.diagnostics.eslint_d,
     },
   }
 end
