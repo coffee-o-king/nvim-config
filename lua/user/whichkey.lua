@@ -46,7 +46,8 @@ function M.config()
       o = { "<cmd>DiffviewOpen<cr>", "Open" },
       c = { "<cmd>DiffviewClose<cr>", "Close" },
       f = { "<cmd>DiffviewToggleFiles<cr>", "Files" },
-      h = { "<cmd>DiffviewFileHistory<cr>", "History" },
+      h = { "<cmd>DiffviewFileHistory %<cr>", "File History" },
+      H = { "<cmd>DiffviewFileHistory<cr>", "Branch History" },
       n = { "<cmd>DiffviewNextHunk<cr>", "Hunk next" },
       p = { "<cmd>DiffviewPrevHunk<cr>", "Hunk prev" },
       r = { "<cmd>DiffviewRefresh<cr>", "Refresh" },
@@ -113,7 +114,7 @@ function M.config()
     l = {
       name = "LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-      d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+      d = { "<cmd>Telescope diagnostics theme=get_dropdown bufnr=0<cr>", "Buffer Diagnostics" },
       w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
       f = { "<cmd>lua vim.lsp.buf.format({timeout_ms = 1000000})<cr>", "Format" },
       i = { "<cmd>LspInfo<cr>", "Info" },
@@ -127,7 +128,7 @@ function M.config()
         "Prev Diagnostic",
       },
       l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-      q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+      h = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Hover Diagnostic" },
       r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
       s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
       S = {
