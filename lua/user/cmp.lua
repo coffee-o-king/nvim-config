@@ -58,8 +58,8 @@ local M = {
 function M.config()
   vim.api.nvim_set_hl(0, "CmpItemKindCodeium", { fg = "teal" })
   vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "green" })
-  vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "lavendar" })
-  vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "peach" })
+  vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "lavender" })
+  vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "maroon" })
   vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "yellow" })
 
   local cmp = require "cmp"
