@@ -4,6 +4,13 @@ local M = {
   commit = "d3a3056204e1a9dbb7c7fe36c114dc43b681768c",
   dependencies = {
     {
+      "Exafunction/codeium.nvim",
+      event = "InsertEnter",
+      config = function()
+        require("codeium").setup {}
+      end,
+    },
+    {
       "hrsh7th/cmp-nvim-lsp",
       event = "InsertEnter",
       commit = "44b16d11215dce86f253ce0c30949813c0a90765",
@@ -49,11 +56,11 @@ local M = {
 }
 
 function M.config()
-  vim.api.nvim_set_hl(0, "CmpItemKindCodeium", { fg = "#6CC644" })
-  vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-  vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
-  vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
-  vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
+  vim.api.nvim_set_hl(0, "CmpItemKindCodeium", { fg = "teal" })
+  vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "green" })
+  vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "lavendar" })
+  vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "peach" })
+  vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "yellow" })
 
   local cmp = require "cmp"
   local luasnip = require "luasnip"
