@@ -101,6 +101,9 @@ function M.config()
       },
     },
   }
+
+  -- custom colors
+  vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = "#fafafa" })
 end
 
 return M

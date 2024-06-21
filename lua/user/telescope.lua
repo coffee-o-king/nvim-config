@@ -117,6 +117,9 @@ function M.config()
       },
     },
   }
+
+  -- custom colors
+  vim.api.nvim_set_hl(0, "TelescopeNormal", { fg = "#fafafa" })
 end
 
 return M

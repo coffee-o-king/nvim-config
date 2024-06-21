@@ -118,6 +118,15 @@ function M.config()
     vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
     vim.api.nvim_buf_set_keymap(0, "t", "<m-l>", [[<C-\><C-n><C-W>l]], opts)
   end
+
+  -- custom colors
+  vim.api.nvim_create_augroup("ToggleTermColors", { clear = true })
+  vim.api.nvim_create_autocmd("TermOpen", {
+    group = "ToggleTermColors",
+    callback = function()
+      vim.cmd "highlight Normal guifg=#fafafa"
+    end,
+  })
 end
 
 return M
