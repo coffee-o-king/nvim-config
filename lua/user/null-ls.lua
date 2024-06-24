@@ -32,7 +32,7 @@ function M.config()
 
       -- -- javascript -- --
       -- formatting.prettier,
-      formatting.prettier.with {
+      formatting.prettierd.with {
         -- get configuration from project directory
         condition = function(utils)
           return utils.root_has_file ".prettierrc.js"
