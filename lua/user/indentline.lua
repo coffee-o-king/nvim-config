@@ -19,7 +19,7 @@ function M.config()
       "NvimTree",
       "Trouble",
       "text",
-      "sql",
+      -- "sql",
     },
     char = icons.ui.LineLeft,
     -- char = icons.ui.LineMiddle,

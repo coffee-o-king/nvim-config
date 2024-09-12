@@ -2,6 +2,8 @@ local M = {
   "nvimtools/none-ls.nvim",
 }
 
+local sql_formatter_config_file = os.getenv "HOME" .. "/.config/nvim/lua/user/sql-formatter-config.json"
+
 function M.config()
   local null_ls = require "null-ls"
 
@@ -11,17 +13,17 @@ function M.config()
   null_ls.setup {
     sources = {
       -- -- sql -- --
-      formatting.sqlfmt.with {
-        filetypes = { "sql" },
-        extra_args = {
-          -- "--dialect=clickhouse",
-          "--line-length=120",
-        },
-      },
-      -- formatting.sql_formatter.with {
+      -- formatting.sqlfmt.with {
       --   filetypes = { "sql" },
-      --   command = { "sleek" },
+      --   extra_args = {
+      --     -- "--dialect=clickhouse",
+      --     "--line-length=120",
+      --   },
       -- },
+      formatting.sql_formatter.with {
+        args = vim.fn.empty(vim.fn.glob(sql_formatter_config_file)) == 0 and { "--config", sql_formatter_config_file }
+          or nil,
+      },
 
       -- -- golang -- --
       formatting.goimports,
@@ -31,26 +33,42 @@ function M.config()
       formatting.stylua,
 
       -- -- javascript -- --
-      -- formatting.prettier,
-      formatting.prettierd.with {
-        -- get configuration from project directory
-        condition = function(utils)
-          return utils.root_has_file ".prettierrc.js"
-        end,
-        extra_filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-      },
-      diagnostics.eslint_d,
+      formatting.prettier,
+      -- formatting.prettier.with {
+      --   -- get configuration from project directory
+      --   condition = function(utils)
+      --     return utils.root_has_file ".prettierrc.js"
+      --   end,
+      --   extra_filetypes = {
+      --     "typescript",
+      --     "typescriptreact",
+      --     "typescript.tsx",
+      --     "javascript",
+      --     "javascriptreact",
+      --     "javascript.jsx",
+      --   },
+      -- },
+      diagnostics.eslint,
+
+      -- -- css -- --
+      diagnostics.stylelint,
 
       -- -- python -- --
       formatting.isort,
+      formatting.docformatter,
       formatting.black.with {
         extra_args = { "--line-length=100" },
       },
+      diagnostics.pylint,
 
       -- -- code completion -- --
       null_ls.builtins.completion.spell,
     },
   }
+
+  -- fix ctrl + c issue when writing sql
+  -- vim.cmd "let g:omni_sql_default_compl_type = 'syntax'"
+  vim.cmd "let g:ftplugin_sql_omni_key = '<C-,>'"
 end
 
 return M
