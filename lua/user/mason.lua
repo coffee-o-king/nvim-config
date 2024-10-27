@@ -22,6 +22,11 @@ M.servers = {
   "gopls",
 }
 
+M.formatters = {
+  "docformatter",
+  "black",
+}
+
 function M.config()
   require("mason").setup {
     ui = {
@@ -30,6 +35,7 @@ function M.config()
   }
   require("mason-lspconfig").setup {
     ensure_installed = M.servers,
+    M.formatters,
   }
 end
 

@@ -1,5 +1,8 @@
 local M = {
   "nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvimtools/none-ls-extras.nvim"
+  }
 }
 
 local sql_formatter_config_file = os.getenv "HOME" .. "/.config/nvim/lua/user/sql-formatter-config.json"
@@ -9,6 +12,7 @@ function M.config()
 
   local formatting = null_ls.builtins.formatting
   local diagnostics = null_ls.builtins.diagnostics
+  local code_actions = null_ls.builtins.code_actions
 
   null_ls.setup {
     sources = {
@@ -48,14 +52,14 @@ function M.config()
       --     "javascript.jsx",
       --   },
       -- },
-      diagnostics.eslint,
+      require("none-ls.diagnostics.eslint"),
+      -- diagnostics.eslint_d,
 
       -- -- css -- --
       diagnostics.stylelint,
 
       -- -- python -- --
       formatting.isort,
-      formatting.docformatter,
       formatting.black.with {
         extra_args = { "--line-length=100" },
       },
