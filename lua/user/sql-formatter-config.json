@@ -1,8 +1,8 @@
 {
   "language": "bigquery",
   "tabWidth": 2,
-  "keywordCase": "lower",
-  "functionCase": "lower",
+  "keywordCase": "upper",
+  "functionCase": "upper",
   "identifierCase": "preserve",
   "logicalOperatorNewline": "before",
   "newlineBeforeSemicolon": true,
