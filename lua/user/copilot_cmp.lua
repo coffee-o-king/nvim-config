@@ -3,10 +3,7 @@ local M = {
 }
 
 function M.config()
-  require("copilot_cmp").setup({
-    suggestion = { enabled = false },
-    panel = { enabled = false },
-  })
+  require("copilot_cmp").setup {}
 end
 
 return M
