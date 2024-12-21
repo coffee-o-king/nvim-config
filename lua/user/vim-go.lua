@@ -3,7 +3,7 @@ local M = {
 }
 
 function M.config()
-  vim.cmd.GoUpdateBinaries()
+  -- vim.cmd.GoUpdateBinaries()
 end
 
 return M
