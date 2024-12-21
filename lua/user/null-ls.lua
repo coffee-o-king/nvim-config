@@ -26,7 +26,7 @@ function M.config()
     filetypes = { "python" },
     generator_opts = {
       command = "docformatter",
-      args = { "--in-place", "-" },
+      args = { "--in-place" },
       -- args = {},
       to_stdin = true,
       check_exit_code = { 0, 1 },
