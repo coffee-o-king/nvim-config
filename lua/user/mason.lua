@@ -34,6 +34,7 @@ function M.config()
     },
   }
   require("mason-lspconfig").setup {
+    automatic_installation = true,
     ensure_installed = M.servers,
     M.formatters,
   }

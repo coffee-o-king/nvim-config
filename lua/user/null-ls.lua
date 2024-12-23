@@ -9,33 +9,9 @@ local sql_formatter_config_file = os.getenv "HOME" .. "/.config/nvim/lua/user/sq
 
 function M.config()
   local null_ls = require "null-ls"
-  local methods = require "null-ls.methods"
-  local helpers = require "null-ls.helpers"
 
   local formatting = null_ls.builtins.formatting
   local diagnostics = null_ls.builtins.diagnostics
-  local code_actions = null_ls.builtins.code_actions
-  local docformatter = helpers.make_builtin {
-    name = "docformatter",
-    meta = {
-      url = "https://pypi.org/project/docformatter/",
-      description = "A docstring formatter for Python.",
-      notes = { "Install docformatter with `pip install docformatter`" },
-    },
-    method = methods.internal.FORMATTING,
-    filetypes = { "python" },
-    generator_opts = {
-      command = "docformatter",
-      args = { "--in-place" },
-      -- args = {},
-      to_stdin = true,
-      check_exit_code = { 0, 1 },
-      on_output = function(output)
-        return output
-      end,
-    },
-    factory = helpers.formatter_factory,
-  }
 
   null_ls.setup {
     sources = {
@@ -82,11 +58,11 @@ function M.config()
       diagnostics.stylelint,
 
       -- -- python -- --
-      docformatter,
       formatting.isort,
       formatting.black.with {
         extra_args = { "--line-length=100" },
       },
+      formatting.docformatter,
       diagnostics.pylint,
 
       -- -- code completion -- --

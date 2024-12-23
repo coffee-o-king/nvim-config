@@ -26,6 +26,7 @@ function M.config()
   require("nvim-tree").setup {
     on_attach = my_on_attach,
     sync_root_with_cwd = true,
+    filters = { dotfiles = false },
     view = { adaptive_size = true },
     renderer = {
       add_trailing = false,
