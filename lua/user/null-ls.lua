@@ -62,7 +62,7 @@ function M.config()
       formatting.black.with {
         extra_args = { "--line-length=100" },
       },
-      formatting.docformatter,
+      -- formatting.docformatter,
       diagnostics.pylint,
 
       -- -- code completion -- --
