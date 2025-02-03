@@ -4,17 +4,17 @@ local M = {
 
 function M.config()
   require("gp").setup {
-    copilot = {
-      endpoint = "https://api.githubcopilot.com/chat/completions",
-      secret = {
-        "bash",
-        "-c",
-        "cat ~/.config/github-copilot/apps.json | sed -e 's/.*oauth_token...//;s/\".*//'",
-      },
-    },
     providers = {
       openai = { disable = true },
-      copilot = { disable = false },
+      copilot = {
+        disable = false,
+        endpoint = "https://api.githubcopilot.com/chat/completions",
+        secret = {
+          "bash",
+          "-c",
+          "cat ~/.config/github-copilot/apps.json | jq -r '.[\"github.com:Iv1.b507a08c87ecfe98\"].oauth_token'",
+        },
+      },
     },
     agents = {
       {
