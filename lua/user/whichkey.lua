@@ -65,6 +65,8 @@ function M.config()
       d = { "<cmd>Lazy debug<cr>", "Debug" },
     },
 
+    r = {"<cmd>lua vim.lsp.buf.rename()<cr>", "Replace"},
+
     f = {
       name = "Find",
       b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
